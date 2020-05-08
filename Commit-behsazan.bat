@@ -8,5 +8,5 @@ pause
 pause
 \\storage.behsazan.local\meymari\PortableGit\bin\git -C \\storage.behsazan.local\meymari\Sandogh commit -m "By Meymari"
 pause
-\\storage.behsazan.local\meymari\PortableGit\bin\git push -u origin master
+\\storage.behsazan.local\meymari\PortableGit\bin\git -C \\storage.behsazan.local\meymari\Sandogh push -u origin master
 pause
