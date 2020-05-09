@@ -1,0 +1,40 @@
+﻿<!doctype html><html><head><title>.:TSETMC:. :: اطلاعات نماد</title><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-63076930-1"></script><script> window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());  gtag('config', 'UA-63076930-1');</script><script>var LongRunnigPagesSite='http://cdn4.tsetmc.com';function ens(ty,sv){var lv=localStorage.getItem("v_"+ty);var t;if (1==1 || lv!=sv){var oX=new XMLHttpRequest();oX.open('GET', 'tsev2/res/loader.aspx?t='+ty+'&_'+sv,false);oX.send(null);t=oX.responseText;if(t[t.length-1]!=';') return;localStorage.setItem("v_"+ty,sv);localStorage.setItem("t_"+ty,t)}else{t=localStorage.getItem("t_"+ty)}if (ty=='s'){document.write("<style>"+t+"</style>")}else{var h=document.getElementsByTagName('HEAD').item(0);var s=document.createElement("script");s.defer=true;s.text=t;h.appendChild(s)}}var version='469';ens('j',version); ens('s',version);  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })</script></head><body><div style="display:none">PSB is being developed by Pooya Paridel.</div><div id="FastView" class="slideTop"></div><div id="TopBar"><div id="company"><div id="company_logo"></div><div id="company_text">شركت مديريت فناوری بورس تهران<br/> Tehran Securities Exchange Technology Management&nbsp Co</div></div><div id="menu_btns"></div><script>ShowMenuIcon(1)</script></div><div class="MainContainer"><form method="post" action="./Loader.aspx?ParTree=151311&amp;i=47749661205825616" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
+</div>
+
+<script>var TopInst='0',LVal18AFC='سيستم',DEven='20200509',LSecVal='رايانه و فعاليت‌هاي وابسته به آن',CgrValCot='N1',Flow='1',InstrumentID='IRO1SYSM0001',InsCode='47749661205825616',BaseVol=2517750,EstimatedEPS='844',ZTitad=1260000000,CIsin='IRO1SYSM0004',LVal18AFC='سيستم',CSecVal='72 ',PdrCotVal='',PClosing='',PSGelStaMax='20851.00',PSGelStaMin='18867.00',Title='همكاران سيستم (سيستم) - بازار اول (تابلوي فرعي) بورس',FaraDesc ='',MinWeek='19628.00',MaxWeek='22999.00',MinYear='5305.00',MaxYear='22999.00',QTotTran5JAvg='2816175',SectorPE='31.87',KAjCapValCpsIdx='20',PriceMin=0,PriceMax=0,PriceYesterday=0;ThemeCount='5';</script>
+
+<div id="tabs" class="InsInfoTab"></div>
+<div id="MainBox" class="box1 zFull silver">
+<div id="MainContent" class="tabcontent content">
+
+<div id="TopBox"></div>
+
+
+
+
+
+<div id="ThemePlace" style="text-align:center">
+
+<div class="box1 olive tbl z2_4 h250" style="display:none" id="Section_relco"></div>
+<div class="box1 silver tbl z2_4 h250" style="display:none" id="Section_history"></div>
+<div class="box1 silver tbl z2_4 h250" style="display:none" id="Section_tcsconfirmedorders"></div>
+
+
+    
+</div>
+
+</div></div>
+<script type="text/javascript">
+    var TradeHistory=[['20200506','19859.00','20661.00','19628.00','20553.00','1339','4701199','93360382692.00'],['20200505','20661.00','21622.00','20541.00','21800.00','769','3609001','74563943355.00'],['20200504','21622.00','22409.00','21289.00','22999.00','1545','5262928','113795460105.00'],['20200503','22409.00','21462.00','22000.00','22535.00','893','2143894','48306399913.00'],['20200502','21462.00','20637.00','20771.00','21668.00','682','2255208','48540045710.00'],['20200429','20637.00','20179.00','20374.00','21000.00','1573','3444442','71082373057.00'],['20200428','20179.00','19411.00','19175.00','20381.00','793','3039612','61337129227.00'],['20200427','19411.00','18647.00','18930.00','19579.00','864','2625079','51095186135.00'],['20200426','18647.00','18243.00','18001.00','19155.00','1573','4314491','80452602352.00']];
+    var RelatedCompanies=[['40505767672724777','رانفور','خدمات‌انفورماتيك‌'],['23838634016123354','مرقام','ايران‌ارقام‌'],['55254206302462116','آپ','آسان پرداخت پرشين'],['41048299027409941','رتاپ','تجارت الكترونيك  پارسيان'],['71856634742001725','سپ','پرداخت الكترونيك سامان كيش'],['65999092673039059','مداران','داده‌پردازي‌ايران‌'],['59607545337891226','پرداخت','به پرداخت ملت'],['4247709727327181','مفاخر','توسعه فناوري اطلاعات خوارزمي'],['50002340308486819','تاپكيش','تجارت الكترونيك پارسيان كيش'],['52792903131341205','افرا','افرانت'],['55201604487356053','فن آوا','گروه فن آوا'],['27952969918967492','ركيش','كارت اعتباري ايران كيش'],['47749661205825616','سيستم','همكاران سيستم'],['53361855643723578','انفورماتيك','گسترش انفورماتيك ايران'],['68941822863885255','رافزا','رايان هم افزا'],['31907674226378369','فن آوا كارت','فن آوا كارت'],['49320769557672822','داده فن آوا','داده پردازي فن آوا'],['60815618436835490','فناوا كارت','فن آوا  كارت']];
+    var RefPortfo=[];
+</script>
+
+<script>var CodalData=[[776718,'','','شفاف سازی در خصوص شایعه، خبر یا گزارش منتشر شده','99/2/14 21:24','99/2/14 21:24',2,0,2,0,[[612275,'docx','کرونا.docx']]]];ens('i', version); ii = InstInfo(); ii.StartInstInfo()</script>
+
+
+
+</form>
+</div></body></html>
