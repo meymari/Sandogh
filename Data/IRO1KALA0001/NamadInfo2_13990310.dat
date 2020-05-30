@@ -1,0 +1,40 @@
+﻿<!doctype html><html><head><title>.:TSETMC:. :: اطلاعات نماد</title><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-63076930-1"></script><script> window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());  gtag('config', 'UA-63076930-1');</script><script>var LongRunnigPagesSite='http://cdn4.tsetmc.com';function ens(ty,sv){var lv=localStorage.getItem("v_"+ty);var t;if (1==1 || lv!=sv){var oX=new XMLHttpRequest();oX.open('GET', 'tsev2/res/loader.aspx?t='+ty+'&_'+sv,false);oX.send(null);t=oX.responseText;if(t[t.length-1]!=';') return;localStorage.setItem("v_"+ty,sv);localStorage.setItem("t_"+ty,t)}else{t=localStorage.getItem("t_"+ty)}if (ty=='s'){document.write("<style>"+t+"</style>")}else{var h=document.getElementsByTagName('HEAD').item(0);var s=document.createElement("script");s.defer=true;s.text=t;h.appendChild(s)}}var version='469';ens('j',version); ens('s',version);  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })</script></head><body><div style="display:none">PSB is being developed by Pooya Paridel.</div><div id="FastView" class="slideTop"></div><div id="TopBar"><div id="company"><div id="company_logo"></div><div id="company_text">شركت مديريت فناوری بورس تهران<br/> Tehran Securities Exchange Technology Management&nbsp Co</div></div><div id="menu_btns"></div><script>ShowMenuIcon(1)</script></div><div class="MainContainer"><form method="post" action="./Loader.aspx?ParTree=151311&amp;i=44549439964296944" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
+</div>
+
+<script>var TopInst='0',LVal18AFC='كالا',DEven='20200530',LSecVal='فعاليتهاي كمكي به نهادهاي مالي واسط',CgrValCot='N1',Flow='1',InstrumentID='IRO1KALA0001',InsCode='44549439964296944',BaseVol=744000,EstimatedEPS='',ZTitad=1860000000,CIsin='IRO1KALA0001',LVal18AFC='كالا',CSecVal='67 ',PdrCotVal='',PClosing='',PSGelStaMax='78606.00',PSGelStaMin='71120.00',Title='بورس كالاي ايران (كالا) - بازار اول (تابلوي فرعي) بورس',FaraDesc ='',MinWeek='73450.00',MaxWeek='80979.00',MinYear='8800.00',MaxYear='105352.00',QTotTran5JAvg='5437357',SectorPE='34.02',KAjCapValCpsIdx='100',PriceMin=0,PriceMax=0,PriceYesterday=0;ThemeCount='5';</script>
+
+<div id="tabs" class="InsInfoTab"></div>
+<div id="MainBox" class="box1 zFull silver">
+<div id="MainContent" class="tabcontent content">
+
+<div id="TopBox"></div>
+
+
+
+
+
+<div id="ThemePlace" style="text-align:center">
+
+<div class="box1 olive tbl z2_4 h250" style="display:none" id="Section_relco"></div>
+<div class="box1 silver tbl z2_4 h250" style="display:none" id="Section_history"></div>
+<div class="box1 silver tbl z2_4 h250" style="display:none" id="Section_tcsconfirmedorders"></div>
+
+
+    
+</div>
+
+</div></div>
+<script type="text/javascript">
+    var TradeHistory=[['20200527','74807.00','77315.00','73450.00','79999.00','8579','6841295','511773573836.00'],['20200526','77575.00','79981.00','76945.00','80979.00','853','676021','52016435845.00'],['20200523','80994.00','85241.00','80979.00','80979.00','1189','741442','60041231718.00'],['20200520','85241.00','89318.00','84853.00','89300.00','3049','2153965','183606632552.00'],['20200519','89318.00','88008.00','86000.00','92400.00','8095','5045303','450636902372.00'],['20200518','88008.00','84087.00','85000.00','88291.00','6742','6805611','598946851862.00'],['20200517','84087.00','88512.00','84087.00','84087.00','1988','1853757','155876864859.00'],['20200516','88512.00','93128.00','88472.00','88700.00','2524','2128673','188413146339.00'],['20200513','93128.00','96082.00','91278.00','99550.00','10959','9047217','842545779037.00']];
+    var RelatedCompanies=[['60523145697836739','بورس','بورس اوراق بهادار تهران'],['11129387075131725','تملت','تامين سرمايه بانك ملت'],['18599703143458101','اميد','تامين سرمايه اميد'],['58741071099161284','فرابورس','فرابورس ايران'],['44549439964296944','كالا','بورس كالاي ايران'],['25357135030606405','تنوين','تامين سرمايه نوين'],['59142194115401696','لوتوس','تامين سرمايه لوتوس پارسيان'],['39171819040364290','انرژي3','ساير اشخاص بورس انرژي'],['60095061789823130','نبورس','نهادهاي مالي بورس اوراق بهادار'],['67612261115225625','تكالا','توليدكنندگان بورس كالاي ايران'],['37366608481858080','كبورس','كارگزاران بورس اوراق بهادار'],['49869693814643443','اكالا','كارگزاران بورس كالاي ايران'],['10919655792568926','نكالا','نهادهاي مالي بورس كالاي ايران'],['33343732576627331','انرژي1','نهادهاي مالي بورس انرژي'],['50374488794681480','تماوند','تامين سرمايه دماوند'],['63531021766590755','سپرده','سپرده گذاري مركزي و تسويه وجوه'],['37272387813342140','انرژي2','فعالان بورس انرژي'],['68215656200943332','تامين سپهر','تامين سرمايه سپهر'],['68980134713666314','سپرده گذاري','سپرده گذاري مركزي اوراق بهادار']];
+    var RefPortfo=[];
+</script>
+
+<script>var CodalData=[[778091,'','','صورت‌های مالی  سال مالی منتهی به 1398/12/29 (حسابرسی شده)','99/2/27 15:19','99/2/27 15:19',2,2,2,0,[[612385,'pdf','گزارش تفسیری مدیریت - 13981229.pdf'],[612386,'pdf','صورتهای مالی 29-12-1398 بورس کالای ایران.pdf']]],[776382,'','','شفاف سازی در خصوص شایعه، خبر یا گزارش منتشر شده','99/2/13 12:11','99/2/13 12:11',2,0,2,0,[[611611,'pdf','Corona.pdf']]],[776004,'','','گزارش فعالیت ماهانه دوره 1 ماهه منتهی به 1399/01/31','99/2/7 08:25','99/2/7 08:25',2,2,2,0,[]]];ens('i', version); ii = InstInfo(); ii.StartInstInfo()</script>
+
+
+
+</form>
+</div></body></html>
