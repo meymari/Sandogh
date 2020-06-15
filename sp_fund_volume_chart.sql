@@ -2,7 +2,7 @@ DROP PROCEDURE sp_fund_volume_chart;
 DELIMITER $$
 CREATE PROCEDURE `sp_fund_volume_chart`()
 BEGIN
-	select "Start sp_fund_volume_chart";
+	SELECT "Start sp_fund_volume_chart";
 	DELETE FROM fund_industry WHERE deleted = 1;
     DELETE FROM fund_share    WHERE deleted = 1;
     DELETE FROM fund_asset    WHERE deleted = 1;
@@ -64,14 +64,14 @@ BEGIN
     WHERE fs.DATE >= @l_min_date;
 
     
-	INSERT INTO fund_volume_chart(`date`,industry_code,ratio,fund_type)
-	SELECT fi.`date`, industry_code, ROUND(SUM(industry_ratio),1) AS ratio, fi.type as fund_type
+	INSERT INTO fund_volume_chart(`date`,industry_code,ratio)
+	SELECT fi.`date`, industry_code, ROUND(SUM(industry_ratio),1) AS ratio
 	FROM vw_fund_industry fi
-    WHERE fi.Date >= @l_min_date
-	GROUP BY fi.`date`, industry_code, fi.type; 
+    WHERE fi.Date >= @l_min_date AND fi.type Like '%A%'
+	GROUP BY fi.`date`, industry_code; 
     
 	UPDATE `fund_industry` SET `chart`=true
-	where (`date` >= @l_min_date) and (created_at <= @l_max_date_industry);
+	where (`date` >= @l_min_date) AND (created_at <= @l_max_date_industry);
     
 	UPDATE `fund_share` SET `chart`=true
 	where (`date` >= @l_min_date) and (created_at <= @l_max_date_share);
@@ -95,6 +95,6 @@ BEGIN
     	END IF;
     UNTIL @LEAVE = 1
     END REPEAT;   
-	select "End sp_fund_volume_chart";	
+	SELECT "End sp_fund_volume_chart";	
 END$$
 DELIMITER ;
