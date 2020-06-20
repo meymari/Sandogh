@@ -62,8 +62,23 @@ BEGIN
     UPDATE fund_share AS fs 
 	SET ratio = fs.nav_stock /(SELECT sum(nav_stock) FROM fund_share WHERE fund_share.DATE = fs.DATE and fund_share.deleted = 0)* 100
     WHERE fs.DATE >= @l_min_date;
-
-    
+	
+    UPDATE fund_industry AS fi
+	SET industry_code = (SELECT industry_code FROM industry WHERE industry.name = fi.industry_name)
+	where fi.fund_industry is null;
+	
+	
+	
+    UPDATE fund_industry AS fi
+	SET ratio = (
+		SELECT float_ratio FROM vw_power_industry 
+		WHERE 
+			vw_power_industry.date = fi.date and 
+			vw_power_industry.fund_code = fi.fund_code and
+			vw_power_industry.industry_code = fi.industry_code		
+	)
+    WHERE fs.DATE >= @l_min_date;	
+   
 	INSERT INTO fund_volume_chart(`date`,industry_code,ratio)
 	SELECT fi.`date`, industry_code, ROUND(SUM(industry_ratio),1) AS ratio
 	FROM vw_fund_industry fi
