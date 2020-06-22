@@ -63,11 +63,7 @@ BEGIN
 	SET ratio = fs.nav_stock /(SELECT sum(nav_stock) FROM fund_share WHERE fund_share.DATE = fs.DATE and fund_share.deleted = 0)* 100
     WHERE fs.DATE >= @l_min_date;
 	
-    UPDATE fund_industry AS fi
-	SET industry_code = (SELECT industry_code FROM industry WHERE industry.name = fi.industry_name)
-	where fi.fund_industry is null;
-	
-	
+	CALL sp_set_industry_code();
 	
     UPDATE fund_industry AS fi
 	SET ratio = (
@@ -113,3 +109,62 @@ BEGIN
 	SELECT "End sp_fund_volume_chart";	
 END$$
 DELIMITER ;
+
+
+-------------------------------
+
+	
+
+
+
+
+UPDATE fund_industry AS fi
+SET ratio = (
+	(
+		SELECT fi.industry_percent * fund_share.nav_stock / 100	FROM fund_share
+		WHERE 
+			fund_share.fund_code = fi.fund_code AND 
+			fund_share.date = fi.date
+	)/
+	(
+		SELECT SUM(symbol_value.float_stock * symbol_value.price_complete)
+		FROM
+			symbol_value join 
+			symbol on(symbol_value.symbol_code = symbol.code) join 
+			industry on(symbol.industry_code = industry.code) 
+		WHERE 
+			industry.code = fi.industry_code AND symbol_value.date = fi.date
+	)*100
+)
+WHERE fi.date >= '1399/03/20';
+
+--------------------------------
+
+
+UPDATE fund_industry AS fi
+SET ratio = (
+	(
+		SELECT fi.industry_percent * fund_share.nav_stock / 100	FROM fund_share
+		WHERE 
+			fund_share.fund_code = fi.fund_code AND 
+			fund_share.date = fi.date and fund_share.deleted = 0
+	)/
+	(
+		SELECT value FROM industry_date
+		WHERE industry_date.industry_code = fi.industry_code AND date = fi.date
+	)*100
+)
+WHERE fi.date > '1399/03/20' and fi.deleted = 0;
+
+-------------------------------
+
+INSERT INTO `industry_date`(`industry_code`, `date`, `value`) 
+SELECT industry.code, symbol_value.date, SUM(symbol_value.float_stock * symbol_value.price_complete)
+FROM
+  symbol_value join 
+  symbol on(symbol_value.symbol_code = symbol.code) join 
+  industry on(symbol.industry_code = industry.code) 
+WHERE 
+  symbol_value.date >= '1399/01/01'
+GROUP BY industry.code, symbol_value.date  
+-----------------------
