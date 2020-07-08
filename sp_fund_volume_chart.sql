@@ -1,7 +1,6 @@
-
 DROP PROCEDURE sp_fund_volume_chart;
 DELIMITER $$
-CREATE PROCEDURE `sp_fund_volume_chart`()
+CREATE PROCEDURE sp_fund_volume_chart()
 BEGIN
 	SELECT "Start sp_fund_volume_chart";
 	DELETE FROM fund_industry WHERE deleted = 1;
@@ -46,11 +45,11 @@ BEGIN
 	
 	SELECT 
 		@l_max_date_industry as l_max_date_industry, 
-		@l_max_date_share AS l_max_date_share, 
-		@l_max_date_asset AS l_max_date_asset, 
+		@l_max_date_share  AS l_max_date_share, 
+		@l_max_date_asset  AS l_max_date_asset, 
 		@l_max_date_symbol AS l_max_date_symbol;
 	#------------------------------------------------------------------------  	
-    DELETE FROM fund_volume_chart WHERE `date` >= @l_min_date;
+    DELETE FROM fund_volume_chart WHERE date >= @l_min_date;
 	#------------------------------------------------------------------------  	     
 	UPDATE fund_share AS fs 
     SET nav_stock = (
@@ -60,12 +59,10 @@ BEGIN
     where nav_stock = 0 or nav_stock is null;      
     
     UPDATE fund_share AS fs 
-	SET ratio = fs.nav_stock /(SELECT sum(nav_stock) FROM fund_share WHERE fund_share.DATE = fs.DATE and fund_share.deleted = 0)* 100
-    WHERE fs.DATE >= @l_min_date;
+	SET ratio = fs.nav_stock /(SELECT sum(nav_stock) FROM fund_share WHERE fund_share.date = fs.date)* 100
+    WHERE fs.date >= @l_min_date;
 	#------------------------------------------------------------------------  
-	CALL sp_set_industry_code();
-	#------------------------------------------------------------------------  
-	DELETE FROM industry_date WHERE symbol_value.date >= '1399/01/01';
+	DELETE FROM industry_date WHERE date >= @l_min_date;
 	INSERT INTO industry_date(industry_code, date, value) 
 	SELECT industry.code, symbol_value.date, SUM(symbol_value.float_stock * symbol_value.price_complete)
 	FROM
@@ -73,15 +70,15 @@ BEGIN
 	  symbol on(symbol_value.symbol_code = symbol.code) join 
 	  industry on(symbol.industry_code = industry.code) 
 	WHERE 
-	  symbol_value.date >= '1399/01/01'
-	GROUP BY industry.code, symbol_value.date  
+	  symbol_value.date >= @l_min_date
+	GROUP BY industry.code, symbol_value.date;
 	#------------------------------------------------------------------------  	
 	UPDATE fund_industry AS fi
 	SET 
 	power_ratio = (
 		(
 			SELECT fi.industry_percent * nav_stock / 100 FROM fund_share
-			WHERE fund_code = fi.fund_code AND date = fi.date and deleted = 0
+			WHERE fund_code = fi.fund_code AND date = fi.date
 		)/
 		(
 			SELECT value FROM industry_date
@@ -90,27 +87,28 @@ BEGIN
 	)
 	,volume_ratio = (
 		SELECT fi.industry_percent * fund_share.ratio FROM fund_share
-		WHERE fund_code = fi.fund_code AND date = fi.date and deleted = 0
+		WHERE fund_code = fi.fund_code AND date = fi.date
 	)
-	WHERE fi.date > @l_min_date and fi.deleted = 0
+	WHERE fi.date > @l_min_date;
 	#------------------------------------------------------------------------  
-	INSERT INTO fund_volume_chart(`date`,industry_code,volume,power)
-	SELECT fi.`date`, industry_code, ROUND(SUM(volume_ratio),1) AS volume,ROUND(SUM(volume_ratio),1) AS power
-	FROM fund_industry fi
-    WHERE fi.Date >= @l_min_date AND fi.type Like '%A%'
-	GROUP BY fi.`date`, industry_code; 
+	INSERT INTO fund_volume_chart(date,industry_code,volume,power)
+	SELECT fi.date, industry_code, ROUND(SUM(volume_ratio),1) AS volume,ROUND(SUM(power_ratio),1) AS power
+	FROM fund_industry fi join 
+		 fund on(fi.fund_code = fund.code)
+    WHERE fi.Date >= @l_min_date AND fund.type Like '%A%'
+	GROUP BY fi.date, industry_code; 
 	#------------------------------------------------------------------------  
-	UPDATE `fund_industry` SET `chart`=true
-	where (`date` >= @l_min_date) AND (created_at <= @l_max_date_industry);
+	UPDATE fund_industry SET chart=true
+	where ((date >= @l_min_date) AND (created_at <= @l_max_date_industry))or(date < '1399/01/01');
     
-	UPDATE `fund_share` SET `chart`=true
-	where (`date` >= @l_min_date) and (created_at <= @l_max_date_share);
+	UPDATE fund_share SET chart=true
+	where ((date >= @l_min_date) and (created_at <= @l_max_date_share))or(date < '1399/01/01');
     
-	UPDATE `fund_asset` SET `chart`=true
-	where (`date` >= @l_min_date) and (created_at <= @l_max_date_asset);
+	UPDATE fund_asset SET chart=true
+	where ((date >= @l_min_date) and (created_at <= @l_max_date_asset))or(date < '1399/01/01');
     
-    UPDATE `symbol_value` SET `chart`=true
-	where (`date` >= @l_min_date) and (created_at <= @l_max_date_symbol);
+    UPDATE symbol_value SET chart=true
+	where ((date >= @l_min_date) and (created_at <= @l_max_date_symbol))or(date < '1399/01/01');
 
 	SET @LEAVE = 0;
 	SET @Count_Fund = (select Count(*) FROM fund WHERE fund.active = 1);
